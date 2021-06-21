@@ -27,12 +27,12 @@
             <tbody>
                 {%for party in this_party%}
                 <tr>
-                    <td><a href="#">{{party.title}}</a></td>
+                    <td><a href="/party_info/{{party.id}}">{{party.title}}</a></td>
                     <td>{{party.location}}</td>
                     <td>{{party.items}}</td>
                     <td>{{party.rules}}</td>
                     <td>{{party.time}} | {{party.date}}</td>
-                    <td><a href="#">Edit</a> | <a href="/delete/{{party.id}}">Delete</a></td>
+                    <td><a href="/edit/{{party.id}}">Edit</a> | <a href="/delete/{{party.id}}">Delete</a></td>
                     <td></td>
                 </tr>
                 {%endfor%}
