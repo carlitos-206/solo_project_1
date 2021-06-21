@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/other_parties.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Party Central</title>
+</head>
+<body>
+<section>
+    <h1>Party Central</h1>
+    <div>
+        <table class="table table-hover" id="only_table">
+            <thead>
+                <th>Party Name</th>
+                <th>Host</th>
+                <th>Location</th>
+                <th>Items Needed</th>
+                <th>Time and Date</th>
+                <th>Actions</th>
+                <th> <a href="/dashboard">Return Home</a></th>
+            </thead>
+            <tbody>
+            {%for party in not_my_parties%}
+            <tr>
+                <td>{{party.title}}</td>
+                <td><a href="/user_profile/{{party.host.id}}">{{party.host.username}}</a></td>
+                <td>{{party.location}}</td>
+                <td>{{party.items}}</td>
+                <td>{{party.time}} | {{party.date}}</td>
+                <td><a href="/join/{{party.id}}">Join</a></td>
+                <td></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+        <tfoot>
+            <td><a href="/dashboard">Return Home</a></td>
+            <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><a href="/other_parties">Back to Top</a></td>
+        </tfoot>
+        </table>
+    </div>
+</section>
+</body>
+</html>

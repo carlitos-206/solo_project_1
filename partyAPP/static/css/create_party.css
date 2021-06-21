@@ -1,0 +1,223 @@
+* {
+    padding: 0px;
+    margin:0px;
+}
+  .errors{
+    position: absolute;
+    left:1100px;
+    bottom:300px;
+    width: fit-content;
+    height: fit-content;
+    font-weight: 200;
+    color:rgb(128, 36, 0);
+    text-shadow: 1px 0 0 green;
+    line-height: 24px;
+  }
+.content {
+    position: absolute;
+    left: 800px;
+    color: aquamarine;
+}
+    #line, #line2, #line3, #line4, #line5{
+    display: block;
+    background-image:linear-gradient(to left, red, blue, green);
+    width: 150px;
+    height: 10px;
+    position: absolute;
+    left: 280px;
+    bottom: 235px;
+    transform: rotate(345deg);
+    }
+    #line2{
+        position: absolute;
+        left:421px;
+        top:103px;
+        transform: rotate(15deg);
+        background-image: linear-gradient(to right, red, blue, green);
+
+    }
+    #line3{
+        position: absolute;
+        left:557px;
+        top:97px;
+        transform: rotate(155deg);
+        background-image: linear-gradient(to right, red, blue, green);
+        width: 120px;
+    }
+    #line4{
+        position: absolute;
+        left:670px;
+        top:-10px;
+        transform: rotate(90deg);
+        background-image: linear-gradient(to left, red, blue, green);
+        width: 100px;
+    }
+    #line5{
+        position: absolute;
+        left:768px;
+        top:85px;
+        transform: rotate(198deg);
+        background-image: linear-gradient(to left, red, blue, green);
+        width: 100px;
+    }
+    #items{
+        position: absolute;
+    }
+    #cancel{
+        position: absolute;
+        top:710px
+    }
+    #kaleido2{
+        transform: rotate(45deg);
+        top:25px;
+    }
+    #party_btn{
+        position: absolute;
+        top: 650px;
+        left: -30px;
+    }
+    #tVideo{
+    position: absolute;
+    top: -400px;
+    left: 200px;
+    }
+html {
+    background: black;
+    min-height: 100%;
+    color: #dadadf;
+    font-weight: 100;
+    font-family: Helvetica Neue, Segoe UI, sans-serif;
+  }
+  .holder {
+    position: absolute;
+    top: 900px;
+    left: 350px;
+    margin-top: -300px;
+    margin-left: -256px;
+
+  }
+  .kaleido {
+    width: 300px;
+    height: 172px;
+    position: relative;
+    transform: rotateZ(10);
+    padding-top: 174px;
+  }
+  .kaleido:nth-child(3) {
+    top: -519px;
+    left: 300px;
+  }
+  
+  .tile {
+    /* 86.6% = ratio of height to width of equilateral triangle */
+    -webkit-clip-path: polygon(50% 0,0 86.6%, 100% 86.6%, 50% 0);
+    clip-path: url(#polygon); 
+    height: 125px;
+    width: 125px;
+    background: url(https://res.cloudinary.com/rebelwalls/image/upload/b_black,c_fill,f_auto,fl_progressive,h_533,q_auto,w_800/v1428564605/article/R10581_image1);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    transform-origin: top center;
+    animation: bgpos 5s infinite;
+  }
+  
+  @keyframes bgpos {
+    0%,100% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: -80px 80px;
+    }
+  }
+  
+  .tile:nth-child(1) {
+  
+  }
+  .tile:nth-child(2) {
+    transform: rotate(60deg) scaleX(-1);
+  }
+  .tile:nth-child(3) {
+    transform: rotate(120deg);
+  }
+  .tile:nth-child(4) {
+    transform: rotate(180deg) scaleX(-1);
+  }
+  .tile:nth-child(5) {
+    transform: rotate(240deg);
+  }
+  .tile:nth-child(6) {
+    transform: rotate(-60deg) scaleX(-1);
+  }
+  
+  .description {
+    width: 240px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    text-align: right;
+  }
+  h1 {
+    font-weight: 200;
+    color:purple;
+    text-shadow: 3px 0 0 green;
+    line-height: 24px;
+  }
+  
+  p {
+    color: aqua;
+    line-height: 18px;
+  }
+  
+  a {
+    color: #9a9a9a; 
+  }
+  /* Arrow */
+  
+  .arrow {
+    position: absolute;
+    margin: 0 auto;
+    width: 100px;
+    left: -250px;
+    bottom: 670px;
+    transform: rotate(45deg);
+  }
+  
+  .arrow .curve {
+      border: 2px solid #BE5F4B;
+      border-color: transparent transparent transparent #BE5F4B;
+      height: 360px;
+      width: 1200px;
+      border-radius: 230px 0 0 150px;
+  }
+  
+  .arrow .point {
+      position: absolute;
+      left: 40px;
+      top: 315px;
+  }
+  
+  .arrow .point:before, .arrow .point:after {
+      border: 1px solid #BE5F4B;
+      height: 25px;
+      content: "";
+      position: absolute;
+  }
+  
+  .arrow .point:before {
+      top: -11px;
+      left: -11px;
+      transform:rotate(-74deg);
+      -webkit-transform:rotate(-74deg);
+    -moz-transform:rotate(-74deg);
+    -ms-transform: rotate(-74deg);
+  }
+  
+  .arrow .point:after {
+    top: -20px;
+      left: 5px;
+      transform:rotate(12deg);
+      -webkit-transform: rotate(12deg);
+    -moz-transform:rotate(12deg);
+    -ms-transform: rotate(12deg);
+  }

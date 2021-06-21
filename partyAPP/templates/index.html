@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">    <title>Party Site</title>
+    <script>
+        function show1(){
+            var x = document.getElementById("floatingPassword1");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+        }
+        function show2(){
+            var x = document.getElementById("floatingPassword2");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+        }
+        function show3(){
+            var x = document.getElementById("floatingPassword3");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+        }
+    </script>
+</head>
+<body>
+    <div class="log-in-box">
+        <div class="head">
+            <H1>LETS GET TWISTED!</H1>
+        </div>
+        <div class="sign-in">
+            <form action="/sign_in" method="POST">
+                {%csrf_token%}
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name='username'>
+                    <label for="floatingInput">Username</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword1" placeholder="Password" name="password">
+                    <label for="floatingPassword">Password</label>
+                    <p>Show Password <input type="checkbox" onclick="show1()" id="pass1"></p>
+                </div>
+                    <button type="submit" id="sign-in-btn">Sign in</button>
+            </form>
+            <p id="p-sign">or <a href="#register">Register Here</a></p>
+        </div>
+    </div>
+    <div class="registration-box">
+        <div class="registration-form" id="register">
+            <h3>Register to Party!</h3>
+            <form action="/new_user" method="POST" >
+                {%csrf_token%}
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingFname" placeholder="First Name" name="first_name">
+                    <label for="floatingFname">First Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingLname" placeholder="Last Name" name="last_name">
+                    <label for="floatingLname">Last Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingEmail" placeholder="sample@mail.com" name="email">
+                    <label for="floatingEmail">Email</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="gender">
+                        <option selected>Rather not say</option>
+                        <option value="1">Male</option>
+                        <option value="2">Female</option>
+                        <option value="3">Other</option>
+                    </select>
+                    <label for="floatingSelect">Gender</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingUsername" placeholder="Username" name="username">
+                    <label for="floatingUsername">Username</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword2" placeholder="Password" name="password">
+                    <label for="floatingPassword">Password</label>
+                    <p>Show Password <input type="checkbox" onclick="show2()" id="pass2"></p>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="password" class="form-control" id="floatingPassword3" placeholder="Confirm Password" name="pw_confirmation">
+                    <label for="floatingPW-confirm">Confirm Password</label>
+                    <p>Show Password <input type="checkbox" onclick="show3()" id="pass3"></p>
+                </div>
+                <p>By registering you agree to the <a href="/terms" target="_blank">Terms and agreements</a></p>
+                <button type="submit" id="regis-btn">Register</button>
+            </form>
+        </div>
+    </div>
+    <div class="errors">
+        {%if messages%}
+        <ul>
+            {%for message in messages%}
+            <li>{{message}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </div>
+</body>
+</html>

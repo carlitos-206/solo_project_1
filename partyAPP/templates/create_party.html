@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/create_party.css' %}">
+    <title>Create</title>
+</head>
+<body>
+    <div class="content" style="z-index: -1;">
+    <h1>Plan the kickback</h1>
+    <a href="/dashboard">Return Home</a>
+    <div id="dont" class="creation_form">
+        <form action="/el_party" method="POST" class="create_form">
+            {%csrf_token%}
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Party Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example: LIT PARTY!" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Location</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Example: Seattle" name="location">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Rules (as host it is your sole responsibility to enforce rules)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Example: 21+ only!" name="rules">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label">Date</label>
+                <input type="date" class="form-control" id="formGroupExampleInput3"name="date" value="1969-08-15">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput5" class="form-label">Time</label>
+                <input type="time" class="form-control" id="formGroupExampleInput3" value="16:20:00" name="time">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput6" class="form-label">Items needed (optional)</label>
+                <textarea name="items_needed" id="items" cols="30" rows="10" placeholder="Example: Cups, straws, ice , etc." name="items_needed"></textarea>
+            </div>
+            <button type="submit" id="party_btn">LETS PARTY!</button>
+            <a id="cancel" href="/dashboard">Cancel</a>
+        </form>
+    </div>
+    </div>
+    <div class="holder" style="z-index: -3;">
+        <div class="kaleido">
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+        <div class="kaleido" id='kaleido2'>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+          <div class="tile"></div>
+        </div>
+    <div id="line"></div>
+    <div id="line2"></div>
+    <div id="line3"></div>
+    <div id="line4"></div>
+    <div id="line5"></div>
+    <div id="tVideo">
+        <iframe width="500" height="315" src="https://www.youtube.com/embed/0dvGdq-jul0?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <div class="things">
+  <div class="content">
+    <div class="arrow">
+      <div class="curve"></div>
+      <div class="point"></div>
+    </div>
+  </div> 
+  <div id='2' class="errors">
+    {%if messages%}
+    <ul>
+        {%for message in messages%}
+        <li>{{message}}</li>
+        {%endfor%}
+    </ul>
+    {%endif%}
+</div>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Picture</title>
+</head>
+<body>
+    <form action="/profile_pic" method="POST">
+        {%csrf_token%}
+    <label for="profile_pic">Upload a Profile Picture!</label>
+    <input type="file" id="myFile" name="filename">
+    <input type="submit">
+    </form>
+    or <a href="/dashboard">Skip</a>
+</body>
+</html>

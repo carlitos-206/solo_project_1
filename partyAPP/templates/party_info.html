@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/party_info.css' %}">
+    <title>The Party</title>
+</head>
+<body class="css-selector">
+    <div id="party_table">
+        {%for party in this_party%}
+        <a id= "tag1" href="/dashboard">Return</a>
+        <a id="tag2" href="/join/{{party.id}}">Join</a>
+        <h1 id="partyName">{{party.title}}</h1>
+        <h3 id="host">Hosted by: {{party.host.username}}</h3>
+        <p id="when">When? {{party.date}} at {{party.time}}</p>
+        <p id="where">Where? {{party.location}}</p>
+        <p id="rules">Rules: {{party.rules}}</p>
+        <p id="items_label">Items Needed:</p>
+        <p id="items_needed">{{party.items}}</p>
+        {%endfor%}
+    </div>
+    <div id="members">
+        <h2 id="who">Who's pulling up?</h2>
+        {%for member in members%}
+        <ul id="list" style="list-style: none;">
+            <li id="rsvp">{{member.username}}</li>
+        </ul>
+        {%endfor%}
+    </div>
+    <div class="errors">
+        {%if messages%}
+        <ul>
+            {%for message in messages%}
+            <li style="margin: 10px; padding:10px">{{message}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </div>
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/viZwcE2EuXg?&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+</html>

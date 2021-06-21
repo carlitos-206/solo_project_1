@@ -1,0 +1,144 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    /* outline: darkred dotted 2px; */
+}
+/* html {
+    scroll-behavior: smooth;
+} */
+@media only screen and (max-width: 480px) {
+    html {
+        width: 480px;
+    }
+    h1 {
+        color: red;
+    }
+    .log-in-box{
+        padding: 5px;
+        position: relative;
+        top: 150px;
+        width: 375px;
+        height: fit-content;
+    }
+        #sign-in-btn{
+            position: relative;
+            left: 50px;
+            top: 25px;
+            border-radius: 15%;
+            width: 75px;
+            background-image: linear-gradient(red,blue,green);
+        }
+        #p-sign{
+            position: relative;
+            left: 125px;
+        }
+    .registration-box{
+        padding: 5px;
+        background-color: blue;
+        position: relative;
+        top: 1800px;
+        width: 375px;
+        height: 812px;
+        color: black;
+    }
+    #regis-btn {
+        position: relative;
+        left: 250px;
+    }
+}
+@media screen and (min-width: 481px) {
+    h1 {
+        color: red;
+    }
+    .log-in-box{
+        /* outline: black dotted 2px; */
+        padding: 5px;
+        position: relative;
+        top: 150px;
+        left: 10px;
+        height: fit-content;
+        width: 450px;
+        justify-content: center;
+        align-items: center;
+    }
+        #sign-in-btn{
+            position: relative;
+            left: 50px;
+            top: 25px;
+            border-radius: 15%;
+            width: 75px;
+            background-image: linear-gradient(red,blue,green);
+        }
+        #p-sign{
+            position: relative;
+            left: 150px;
+        }
+    .registration-box{
+        padding: 5px;
+        background-color: blue;
+        position: relative;
+        top: 2000px;
+        height: 1025px;
+        color: black;
+    }
+    #regis-btn {
+        position: relative;
+        left: 250px;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    h1 {
+        color: gray;
+    }
+    .errors {
+        position: absolute;
+        left: 550px;
+        bottom:200px;
+        color: rgb(255, 0, 0);
+    }
+    .log-in-box{
+        padding: 5px;
+        position: relative;
+        top: 50px;
+        left: 550px;
+        height: fit-content;
+        width: 450px;
+    }
+        #sign-in-btn{
+            position: relative;
+            left: 350px;
+            top: 5px;
+            /* position: fixed; */
+            border-radius: 15%;
+            width: 75px;
+            background-image: linear-gradient(red,blue,green);
+        }
+        #p-sign{
+            position: relative;
+            left: 150px;
+            display: none;
+        }
+    .registration-box{
+        -webkit-transition: all 4s ease;
+        -moz-transition: all 4s ease;
+        -ms-transition: all 4s ease;
+        -o-transition: all 4s ease;
+        transition: all 4s ease; 
+        padding: 5px;
+        background-color: blue;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: fit-content;
+        width: 500px;
+        color: black;
+        border-radius: 1%;
+    }
+    #regis-btn {
+        position: relative;
+        left: 250px;
+    }
+    
+}

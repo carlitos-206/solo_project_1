@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="text-center">
+            <div class="error mx-auto" data-text="$USERNOTFOUND$">Welcome:{{user.username}}</div>
+    </div>
+    <div class="errors">
+        {%if messages%}
+        <ul>
+            {%for message in messages%}
+            <li style="margin: 10px; padding:10px">{{message}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+    </div>
+    <div class="pure-menu pure-menu-horizontal pure-menu-scrollable" id="main_table">
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item">
+                <a href="/create_party" class="pure-menu-link">Create party</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="/my_parties" class="pure-menu-link">View my parties</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="/other_parties" class="pure-menu-link">View other parties</a>
+            </li>
+            <li class="pure-menu-item">
+                <a href="/logout" class="pure-menu-link">Log Out</a>
+            </li>
+    <table>
+        <table class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <th>Party Name</th>
+                    <th>Host</th>
+                    <th>Location</th>
+                    <th>Items Needed</th>
+                    <th>Rules</th>
+                    <th>Time and Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for party in this_party%}
+                <tr>
+                    <td><a href="/party_info/{{party.id}}">{{party.title}}</a></td>
+                    <td>{{party.host.username}}</td>
+                    <td>{{party.location}}</td>
+                    <td>{{party.items}}</td>
+                    <td>{{party.rules}}</td>
+                    <td>{{party.time}} | {{party.date}}</td>
+                    <td><a href="delete/{{party.id}}">Remove</a>|<a href="/edit/{{party.id}}">Edit</td>
+                </tr>
+                {%endfor%}
+                {%for party in party_added%}
+                <tr>
+                    <td><a href="/party_info/{{party.id}}">{{party.title}}</a></td>
+                    <td><a href="/user_profile/{{party.host.id}}">{{party.host.username}}</a></td>
+                    <td>{{party.location}}</td>
+                    <td>{{party.items}}</td>
+                    <td>{{party.rules}}</td>
+                    <td>{{party.time}} | {{party.date}}</td>
+                    <td><a href="/drop_party/{{party.id}}">Drop</a></td>
+                </tr>
+                {%endfor%}
+                <!-- blend the for loop with a  -->
+    </table>
+    </div>
+</body>
+</html>

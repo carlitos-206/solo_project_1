@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/editParty.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <title>Edit</title>
+</head>
+<body>
+    <div class='wrap'>
+        <div class="errors">
+            {%if messages%}
+            <ul>
+                {%for message in messages%}
+                <li style="margin: 10px; padding:10px">{{message}}</li>
+                {%endfor%}
+            </ul>
+            {%endif%}
+        </div>
+        <div id="dont" class="creation_form">
+        <form action="/update/{{my_party.id}}" method="POST" class="create_form">
+            {%csrf_token%}
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Party Name</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" value="{{my_party.title}}" name="title">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Location</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2"value="{{my_party.location}}" name="location">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Rules (as host it is your sole responsibility to enforce rules)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput3" value="{{my_party.rules}}" name="rules">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label">Date</label>
+                <input type="date" class="form-control" id="formGroupExampleInput3"name="date" value='{{my_party.date|date:"Y-m-d"}}'>
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput5" class="form-label">Time</label>
+                <input type="time" class="form-control" id="formGroupExampleInput3" value="{{my_party.time|date:'H:i'}}" name="time">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput6" class="form-label">Items needed (optional)</label>
+                <textarea name="items_needed" id="items" cols="30" rows="10" placeholder="Example: Cups, straws, ice , etc." name="items_needed"></textarea>
+            </div>
+            <button type="submit" id="party_btn">EDIT</button>
+            <a id="cancel" href="/dashboard">Cancel</a>
+        
+        </form>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1>:) (:</h1></div>
+        <div class='tri'><h1></h1></div>
+    </div>
+    </div>
+    
+</body>
+</html>

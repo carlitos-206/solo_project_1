@@ -1,0 +1,150 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+h1 {
+    color: white;
+    position: absolute;
+    left: 500px;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0;
+    background: black;
+    height: 100vh;
+  }
+  
+  .frame {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .img-layer {
+    width: inherit;
+    height: inherit;
+    background-image: url("https://cdn.wallpapersafari.com/27/27/LmNIwi.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+  }
+  .img-layer--1 {
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: luminosity;
+  }
+  .img-layer--2 {
+    background-color: rgba(255, 255, 255, 0.5);
+    background-blend-mode: overlay;
+    animation: blinking 0.3s ease-out infinite, glitch-anim-horizontal 5s linear infinite alternate;
+  }
+  .img-layer--3 {
+    background-color: rgba(255, 255, 255, 0.08);
+    background-blend-mode: overlay;
+    animation: glitch-anim-horizontal 2s linear infinite alternate;
+  }
+  .img-layer--4 {
+    background-color: rgba(255, 255, 255, 0.02);
+    background-blend-mode: overlay;
+    animation: glitch-anim-horizontal 0.8s ease infinite alternate;
+  }
+  .img-layer--5 {
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: overlay;
+    clip-path: polygon(0 0, 0 1%, 100% 1%, 100% 0);
+    animation: blinking 1s linear infinite, glitch-anim-vertical 3s ease infinite alternate;
+  }
+  .img-layer--6 {
+    background-color: white;
+    background-blend-mode: luminosity;
+    animation: blinking 0.8s linear infinite, glitch-anim-right 5s linear infinite;
+  }
+  .img-layer--7 {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-blend-mode: overlay;
+    animation: blinking 0.8s 1.4s linear infinite, glitch-anim-left 5s linear infinite;
+  }
+  
+  @keyframes blinking {
+    0% {
+      opacity: 0.25;
+    }
+    70%, 100% {
+      opacity: 0;
+    }
+  }
+  @keyframes glitch-anim-right {
+    to {
+      left: 8%;
+      top: -3%;
+    }
+  }
+  @keyframes glitch-anim-left {
+    to {
+      right: 8%;
+      bottom: -1%;
+    }
+  }
+  @keyframes glitch-anim-horizontal {
+    0% {
+      clip-path: polygon(0 0, 0 100%, 2% 100%, 2% 0);
+    }
+    10% {
+      clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+    }
+    25% {
+      clip-path: polygon(25% 0, 25% 100%, 27% 100%, 27% 0);
+    }
+    40% {
+      clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+    }
+    50% {
+      clip-path: polygon(75% 0, 75% 100%, 77% 100%, 77% 0);
+    }
+    60% {
+      clip-path: polygon(65% 0, 65% 100%, 67% 100%, 67% 0);
+    }
+    75% {
+      clip-path: polygon(35% 0, 35% 100%, 37% 100%, 37% 0);
+    }
+    85% {
+      clip-path: polygon(85% 0, 85% 100%, 87% 100%, 87% 0);
+    }
+    100% {
+      clip-path: polygon(100% 0, 100% 100%, 100% 100%, 100% 0);
+    }
+  }
+  @keyframes glitch-anim-vertical {
+    0% {
+      clip-path: polygon(0 0, 0 1%, 100% 1%, 100% 0);
+    }
+    10% {
+      clip-path: polygon(0 20%, 0 21%, 100% 21%, 100% 20%);
+    }
+    25% {
+      clip-path: polygon(0 75%, 0 76%, 100% 76%, 100% 75%);
+    }
+    40% {
+      clip-path: polygon(0 40%, 0 41%, 100% 41%, 100% 40%);
+    }
+    50% {
+      clip-path: polygon(0 90%, 0 91%, 100% 91%, 100% 90%);
+    }
+    60% {
+      clip-path: polygon(0 80%, 0 85%, 100% 85%, 100% 80%);
+    }
+    75% {
+      clip-path: polygon(0 32%, 0 33%, 100% 33%, 100% 32%);
+    }
+    85% {
+      clip-path: polygon(0 65%, 0 66%, 100% 66%, 100% 65%);
+    }
+    100% {
+      clip-path: polygon(0 35%, 0 50%, 100% 50%, 100% 35%);
+    }
+  }
